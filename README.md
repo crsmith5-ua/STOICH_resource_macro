@@ -1,0 +1,1 @@
+# STOICH_resource_macro
