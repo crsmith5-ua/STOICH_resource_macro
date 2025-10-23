@@ -1,35 +1,11 @@
 library(tidyverse)
 library(stringr)
 #Import and combine data####
-##Pull food resource STOICH data from NEON sites in latest stoich database release####
-#set to location of file on computer
-STOICH_20241220 <- read_csv("January 2025 analysis/STOICH_Beta_Release_Full_Join_20241220.csv")
-str(STOICH_20241220)
-##Pull NEON site code list and add siteID column to stoich data####
-#load in NEON site name to code sheet to convert names to 4 letter code
-NEON_SiteMap_Table <- read_csv("January 2025 analysis/NEON-SiteMap-Table.csv")
-#add siteID column to match NEON invert data (need to make siteNAME in table all lowercase to match STOICH)
-NEON_SiteMap_Table$siteName<-tolower(NEON_SiteMap_Table$siteName)
-#remove lake and prairie pothole sites
-NEON_SiteMap_Table<-NEON_SiteMap_Table%>%
-  filter(!str_detect(siteName, regex("lake", ignore_case = TRUE)))%>%
-  filter(!str_detect(siteName, regex("pothole", ignore_case = TRUE)))
-#fix rio issue in stoich database
-names<- STOICH_20241220%>%
-  summarise(unique(Name.Site))%>%
-  arrange()
-
-STOICH_20241220<-STOICH_20241220%>%
-  mutate(Name.Site= case_when(Name.Site=="río cupeyes neon"~ "rio cupeyes neon",
-                              Name.Site=="río yahuecas neon" ~ "rio yahuecas neon",
-                              .default = Name.Site))
-#add siteID and keep only sites in NEON_SiteMap_Table
-STOICH_20241220<-STOICH_20241220%>%
-  left_join(NEON_SiteMap_Table[,1:2], join_by("Name.Site"=="siteName"))%>%
-  rename(siteID = siteCode)%>%
-  drop_na(siteID)
+##Import previously filtered STOICH NEON food resource data from NEON sites####
+STOICH_periphyton <- read_csv("January 2025 analysis/STOICH_periphyton.csv")
+STOICH_seston <- read_csv("January 2025 analysis/STOICH_seston.csv")
 #Filter to only periphyton and seston data####
-periphyton_data<-STOICH_20241220%>%
+periphyton_data<-STOICH_periphyton%>%
   select(siteID,SampleDate.SampleEvent,Name.Site,Latitude.Site,Longitude.Site,EcosystemType.Site,Type.OrganismStoichiometry,
          CarbonMean.OrganismStoichiometry, CarbonUnits.OrganismStoichiometry,
          NitrogenMean.OrganismStoichiometry, NitrogenUnits.OrganismStoichiometry,
@@ -40,7 +16,7 @@ periphyton_data<-STOICH_20241220%>%
          Type.OrganismStoichiometry %in% c("Periphyton"),
          CarbonUnits.OrganismStoichiometry != "ugC_L")
 
-seston_data<-STOICH_20241220%>%
+seston_data<-STOICH_seston%>%
   select(siteID,SampleDate.SampleEvent,Name.Site,Latitude.Site,Longitude.Site,EcosystemType.Site,Type.OrganismStoichiometry,
          CarbonMean.OrganismStoichiometry, CarbonUnits.OrganismStoichiometry,
          NitrogenMean.OrganismStoichiometry, NitrogenUnits.OrganismStoichiometry,

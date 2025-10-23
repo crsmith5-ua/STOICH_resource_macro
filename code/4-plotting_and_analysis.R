@@ -3,6 +3,7 @@ library(ggthemes)
 library(patchwork)
 library(ggpubr)
 library(scales)
+library(effectsize)
 library(scatterpie)
 library(ggspatial)
 library(sf)
@@ -26,7 +27,7 @@ peri_hb_cn<-scenarios%>%
   filter(ffg=="HB")%>%
   ggplot(aes(res_CN, taxa_CN, color=factor(scenario)))+
   geom_point()+
-  stat_smooth(method="lm")+
+  stat_smooth(method="lm", alpha=0.2)+
   scale_color_manual(values=c("black", "#0072B2", "#E69F00", "#009E73"), name="Scenario",
                      label=c("Observed Local", "Observed Global", "Theoretical Global", "Theoretical Local"))+
   scale_x_continuous(transform = "log", breaks = breaks_log(n=6))+
@@ -46,7 +47,7 @@ peri_hb_cp<-scenarios%>%
   filter(ffg=="HB")%>%
   ggplot(aes(res_CP, taxa_CP, color=factor(scenario)))+
   geom_point()+
-  stat_smooth(method="lm")+
+  stat_smooth(method="lm", alpha=0.2)+
   scale_color_manual(values=c("black", "#0072B2", "#E69F00", "#009E73"), name="Scenario",
                      label=c("Observed Local", "Observed Global", "Theoretical Global", "Theoretical Local"))+
   scale_x_continuous(transform = "log", breaks = breaks_log(n=6))+
@@ -66,7 +67,7 @@ peri_hb_np<-scenarios%>%
   filter(ffg=="HB")%>%
   ggplot(aes(res_NP, taxa_NP, color=factor(scenario)))+
   geom_point()+
-  stat_smooth(method="lm")+
+  stat_smooth(method="lm", alpha=0.2)+
   scale_color_manual(values=c("black", "#0072B2", "#E69F00", "#009E73"), name="Scenario",
                      label=c("Observed Local", "Observed Global", "Theoretical Global", "Theoretical Local"))+
   scale_x_continuous(transform = "log", breaks = breaks_log(n=6))+
@@ -94,7 +95,7 @@ ses_cf_cn<-scenarios%>%
   filter(ffg=="CF")%>%
   ggplot(aes(res_CN, taxa_CN, color=factor(scenario)))+
   geom_point()+
-  stat_smooth(method="lm")+
+  stat_smooth(method="lm", alpha=0.2)+
   scale_color_manual(values=c("black", "#0072B2", "#E69F00", "#009E73"), name="Scenario",
                      label=c("Observed Local", "Observed Global", "Theoretical Global", "Theoretical Local"))+
   scale_x_continuous(transform = "log", breaks = breaks_log(n=6))+
@@ -113,7 +114,7 @@ ses_cf_cp<-scenarios%>%
   filter(ffg=="CF")%>%
   ggplot(aes(res_CP, taxa_CP, color=factor(scenario)))+
   geom_point()+
-  stat_smooth(method="lm")+
+  stat_smooth(method="lm", alpha=0.2)+
   scale_color_manual(values=c("black", "#0072B2", "#E69F00", "#009E73"), name="Scenario",
                      label=c("Observed Local", "Observed Global", "Theoretical Global", "Theoretical Local"))+
   scale_x_continuous(transform = "log", breaks = breaks_log(n=6))+
@@ -132,7 +133,7 @@ ses_cf_np<-scenarios%>%
   filter(ffg=="CF")%>%
   ggplot(aes(res_NP, taxa_NP, color=factor(scenario)))+
   geom_point()+
-  stat_smooth(method="lm")+
+  stat_smooth(method="lm", alpha=0.2)+
   scale_color_manual(values=c("black", "#0072B2", "#E69F00", "#009E73"), name="Scenario",
                      label=c("Observed Local", "Observed Global", "Theoretical Global", "Theoretical Local"))+
   scale_x_continuous(transform = "log", breaks = breaks_log(n=6))+
@@ -153,7 +154,7 @@ ses_cg_cn<-scenarios%>%
   filter(ffg=="CG")%>%
   ggplot(aes(res_CN, taxa_CN, color=factor(scenario)))+
   geom_point()+
-  stat_smooth(method="lm")+
+  stat_smooth(method="lm", alpha=0.2)+
   scale_color_manual(values=c("black", "#0072B2", "#E69F00", "#009E73"), name="Scenario",
                      label=c("Observed Local", "Observed Global", "Theoretical Global", "Theoretical Local"))+
   scale_x_continuous(transform = "log", breaks = breaks_log(n=6))+
@@ -172,7 +173,7 @@ ses_cg_cp<-scenarios%>%
   filter(ffg=="CG")%>%
   ggplot(aes(res_CP, taxa_CP, color=factor(scenario)))+
   geom_point()+
-  stat_smooth(method="lm")+
+  stat_smooth(method="lm", alpha=0.2)+
   scale_color_manual(values=c("black", "#0072B2", "#E69F00", "#009E73"), name="Scenario",
                      label=c("Observed Local", "Observed Global", "Theoretical Global", "Theoretical Local"))+
   scale_x_continuous(transform = "log", breaks = breaks_log(n=6))+
@@ -191,7 +192,7 @@ ses_cg_np<-scenarios%>%
   filter(ffg=="CG")%>%
   ggplot(aes(res_NP, taxa_NP, color=factor(scenario)))+
   geom_point()+
-  stat_smooth(method="lm")+
+  stat_smooth(method="lm", alpha=0.2)+
   scale_color_manual(values=c("black", "#0072B2", "#E69F00", "#009E73"), name="Scenario",
                      label=c("Observed Local", "Observed Global", "Theoretical Global", "Theoretical Local"))+
   scale_x_continuous(transform = "log", breaks = breaks_log(n=6))+
@@ -222,6 +223,9 @@ myLegend <- get_legend(ses_cf_cn +
 
 ggplot2::ggsave("January 2025 analysis/graphs/CF_CG.jpeg",dpi=800, width=12, height=12)
 
+x_np_4<-summary(lm(log(taxa_NP)~log(res_NP),data=scenarios%>%filter(ffg=="HB" &scenario==4)))
+x_np_4
+x_np_4$fstatistic[1]
 #Extract slopes and p-values for all scenarios and ratios####
 homeostasis_test<-function(x){
   x_cn_1<-summary(lm(log(taxa_CN)~log(res_CN),data=scenarios%>%filter(ffg==x &scenario==1)))
@@ -244,14 +248,23 @@ homeostasis_test<-function(x){
                      cn_se=c(x_cn_1$coefficients[2,2],x_cn_2$coefficients[2,2],x_cn_3$coefficients[2,2],x_cn_4$coefficients[2,2]),
                      cn_p=c(x_cn_1$coefficients[2,4],x_cn_2$coefficients[2,4],x_cn_3$coefficients[2,4],x_cn_4$coefficients[2,4]),
                      cn_r2=c(x_cn_1$r.squared,x_cn_2$r.squared, x_cn_3$r.squared, x_cn_4$r.squared),
+                     cn_fstat=c(x_cn_1$fstatistic[1], x_cn_2$fstatistic[1],x_cn_3$fstatistic[1],x_cn_4$fstatistic[1]),
+                     cn_numdf=c(x_cn_1$fstatistic[2], x_cn_2$fstatistic[2],x_cn_3$fstatistic[2],x_cn_4$fstatistic[2]),
+                     cn_dendf=c(x_cn_1$fstatistic[3], x_cn_2$fstatistic[3],x_cn_3$fstatistic[3],x_cn_4$fstatistic[3]),
                      cp_H=c(x_cp_1$coefficients[2,1],x_cp_2$coefficients[2,1],x_cp_3$coefficients[2,1],x_cp_4$coefficients[2,1]),
                      cp_se=c(x_cp_1$coefficients[2,2],x_cp_2$coefficients[2,2],x_cp_3$coefficients[2,2],x_cp_4$coefficients[2,2]),
                      cp_p=c(x_cp_1$coefficients[2,4],x_cp_2$coefficients[2,4],x_cp_3$coefficients[2,4],x_cp_4$coefficients[2,4]),
                      cp_r2=c(x_cp_1$r.squared,x_cp_2$r.squared, x_cp_3$r.squared, x_cp_4$r.squared),
+                     cp_fstat=c(x_cp_1$fstatistic[1], x_cp_2$fstatistic[1],x_cp_3$fstatistic[1],x_cp_4$fstatistic[1]),
+                     cp_numdf=c(x_cp_1$fstatistic[2], x_cp_2$fstatistic[2],x_cp_3$fstatistic[2],x_cp_4$fstatistic[2]),
+                     cp_dendf=c(x_cp_1$fstatistic[3], x_cp_2$fstatistic[3],x_cp_3$fstatistic[3],x_cp_4$fstatistic[3]),
                      np_H=c(x_np_1$coefficients[2,1],x_np_2$coefficients[2,1],x_np_3$coefficients[2,1],x_np_4$coefficients[2,1]),
                      np_se=c(x_np_1$coefficients[2,2],x_np_2$coefficients[2,2],x_np_3$coefficients[2,2],x_np_4$coefficients[2,2]),
                      np_p=c(x_np_1$coefficients[2,4],x_np_2$coefficients[2,4],x_np_3$coefficients[2,4],x_np_4$coefficients[2,4]),
-                     np_r2=c(x_np_1$r.squared,x_np_2$r.squared, x_np_3$r.squared, x_np_4$r.squared))
+                     np_r2=c(x_np_1$r.squared,x_np_2$r.squared, x_np_3$r.squared, x_np_4$r.squared),
+                     np_fstat=c(x_np_1$fstatistic[1], x_np_2$fstatistic[1],x_np_3$fstatistic[1],x_np_4$fstatistic[1]),
+                     np_numdf=c(x_np_1$fstatistic[2], x_np_2$fstatistic[2],x_np_3$fstatistic[2],x_np_4$fstatistic[2]),
+                     np_dendf=c(x_np_1$fstatistic[3], x_np_2$fstatistic[3],x_np_3$fstatistic[3],x_np_4$fstatistic[3]))
   
   return(output)
 }
@@ -262,7 +275,7 @@ CG_homeostasis<-homeostasis_test("CG")
 
 all_scenario_values<-bind_rows(HB_homeostasis,CF_homeostasis,CG_homeostasis)
 all_scenario_values<-all_scenario_values%>%
-  pivot_longer(cols=cn_H:np_r2, names_to = "ratio", values_to = "value")%>%
+  pivot_longer(cols=cn_H:np_dendf, names_to = "ratio", values_to = "value")%>%
   separate(ratio, c("ratio","test"))%>%
   pivot_wider(names_from="test", values_from = "value")
 
@@ -275,26 +288,54 @@ write.csv(all_scenario_values,file="January 2025 analysis/model output/homeostas
 hypothesis_tests<-function(x){
   
   hypothesis1cn<-summary(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(1,2) & ffg==x)))
+  effect1cn<-eta_squared(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(1,2) & ffg==x)))
   hypothesis1cp<-summary(lm(log(taxa_CP)~log(res_CP)*scenario,data=scenarios%>%filter(scenario %in% c(1,2)& ffg==x)))
+  effect1cp<-eta_squared(lm(log(taxa_CP)~log(res_CP)*scenario,data=scenarios%>%filter(scenario %in% c(1,2) & ffg==x)))
   hypothesis1np<-summary(lm(log(taxa_NP)~log(res_NP)*scenario,data=scenarios%>%filter(scenario %in% c(1,2)& ffg==x)))
+  effect1np<-eta_squared(lm(log(taxa_NP)~log(res_NP)*scenario,data=scenarios%>%filter(scenario %in% c(1,2) & ffg==x)))
   
-  hypothesis2cn<-summary(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(1,3)& ffg==x)))
+  hypothesis2cn<-summary(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(1,3) & ffg==x)))
+  effect2cn<-eta_squared(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(1,3) & ffg==x)))
   hypothesis2cp<-summary(lm(log(taxa_CP)~log(res_CP)*scenario,data=scenarios%>%filter(scenario %in% c(1,3)& ffg==x)))
+  effect2cp<-eta_squared(lm(log(taxa_CP)~log(res_CP)*scenario,data=scenarios%>%filter(scenario %in% c(1,3) & ffg==x)))
   hypothesis2np<-summary(lm(log(taxa_NP)~log(res_NP)*scenario,data=scenarios%>%filter(scenario %in% c(1,3)& ffg==x)))
+  effect2np<-eta_squared(lm(log(taxa_NP)~log(res_NP)*scenario,data=scenarios%>%filter(scenario %in% c(1,3) & ffg==x)))
   
-  hypothesis3cn<-summary(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(1,4)& ffg==x)))
+  hypothesis3cn<-summary(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(1,4) & ffg==x)))
+  effect3cn<-eta_squared(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(1,4) & ffg==x)))
   hypothesis3cp<-summary(lm(log(taxa_CP)~log(res_CP)*scenario,data=scenarios%>%filter(scenario %in% c(1,4)& ffg==x)))
+  effect3cp<-eta_squared(lm(log(taxa_CP)~log(res_CP)*scenario,data=scenarios%>%filter(scenario %in% c(1,4) & ffg==x)))
   hypothesis3np<-summary(lm(log(taxa_NP)~log(res_NP)*scenario,data=scenarios%>%filter(scenario %in% c(1,4)& ffg==x)))
+  effect3np<-eta_squared(lm(log(taxa_NP)~log(res_NP)*scenario,data=scenarios%>%filter(scenario %in% c(1,4) & ffg==x)))
   
-  hypothesis4cn<-summary(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(3,4)& ffg==x)))
+  hypothesis4cn<-summary(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(3,4) & ffg==x)))
+  effect4cn<-eta_squared(lm(log(taxa_CN)~log(res_CN)*scenario,data=scenarios%>%filter(scenario %in% c(3,4) & ffg==x)))
   hypothesis4cp<-summary(lm(log(taxa_CP)~log(res_CP)*scenario,data=scenarios%>%filter(scenario %in% c(3,4)& ffg==x)))
+  effect4cp<-eta_squared(lm(log(taxa_CP)~log(res_CP)*scenario,data=scenarios%>%filter(scenario %in% c(3,4) & ffg==x)))
   hypothesis4np<-summary(lm(log(taxa_NP)~log(res_NP)*scenario,data=scenarios%>%filter(scenario %in% c(3,4)& ffg==x)))
+  effect4np<-eta_squared(lm(log(taxa_NP)~log(res_NP)*scenario,data=scenarios%>%filter(scenario %in% c(3,4) & ffg==x)))
   
   output<-data.frame(nutrient=c("CN","CP","NP"),ffg=x,
                      hypothesis1_p=c(hypothesis1cn$coefficients[4,4],hypothesis1cp$coefficients[4,4],hypothesis1np$coefficients[4,4]),
+                     hypothesis1_fstat=c(hypothesis1cn$fstatistic[1], hypothesis1cp$fstatistic[1],hypothesis1np$fstatistic[1]),
+                     hypothesis1_numdf=c(hypothesis1cn$fstatistic[2], hypothesis1cp$fstatistic[2],hypothesis1np$fstatistic[2]),
+                     hypothesis1_dendf=c(hypothesis1cn$fstatistic[3], hypothesis1cp$fstatistic[3],hypothesis1np$fstatistic[3]),
+                     hypothesis1_eff=c(effect1cn[3,2], effect1cp[3,2], effect1np[3,2]),
                      hypothesis2_p=c(hypothesis2cn$coefficients[4,4],hypothesis2cp$coefficients[4,4],hypothesis2np$coefficients[4,4]),
+                     hypothesis2_fstat=c(hypothesis2cn$fstatistic[1], hypothesis2cp$fstatistic[1],hypothesis2np$fstatistic[1]),
+                     hypothesis2_numdf=c(hypothesis2cn$fstatistic[2], hypothesis2cp$fstatistic[2],hypothesis2np$fstatistic[2]),
+                     hypothesis2_dendf=c(hypothesis2cn$fstatistic[3], hypothesis2cp$fstatistic[3],hypothesis2np$fstatistic[3]),
+                     hypothesis2_eff=c(effect2cn[3,2], effect2cp[3,2], effect2np[3,2]),
                      hypothesis3_p=c(hypothesis3cn$coefficients[4,4],hypothesis3cp$coefficients[4,4],hypothesis3np$coefficients[4,4]),
-                     hypothesis4_p=c(hypothesis4cn$coefficients[4,4],hypothesis4cp$coefficients[4,4],hypothesis4np$coefficients[4,4]))
+                     hypothesis3_fstat=c(hypothesis3cn$fstatistic[1], hypothesis3cp$fstatistic[1],hypothesis3np$fstatistic[1]),
+                     hypothesis3_numdf=c(hypothesis3cn$fstatistic[2], hypothesis3cp$fstatistic[2],hypothesis3np$fstatistic[2]),
+                     hypothesis3_dendf=c(hypothesis3cn$fstatistic[3], hypothesis3cp$fstatistic[3],hypothesis3np$fstatistic[3]),
+                     hypothesis3_eff=c(effect3cn[3,2], effect3cp[3,2], effect3np[3,2]),
+                     hypothesis4_p=c(hypothesis4cn$coefficients[4,4],hypothesis4cp$coefficients[4,4],hypothesis4np$coefficients[4,4]),
+                     hypothesis4_fstat=c(hypothesis4cn$fstatistic[1], hypothesis4cp$fstatistic[1],hypothesis4np$fstatistic[1]),
+                     hypothesis4_numdf=c(hypothesis4cn$fstatistic[2], hypothesis4cp$fstatistic[2],hypothesis4np$fstatistic[2]),
+                     hypothesis4_dendf=c(hypothesis4cn$fstatistic[3], hypothesis4cp$fstatistic[3],hypothesis4np$fstatistic[3]),
+                     hypothesis4_eff=c(effect4cn[3,2], effect4cp[3,2], effect4np[3,2]))
   
   return(output)
 }
@@ -303,9 +344,16 @@ HB_hypothesis<-hypothesis_tests( "HB")
 CG_hypothesis<-hypothesis_tests( "CG")
 CF_hypothesis<-hypothesis_tests( "CF")
 
-all_p_values<-bind_rows(HB_hypothesis,CG_hypothesis,CF_hypothesis)
+all_hypothesis_test<-bind_rows(HB_hypothesis,CG_hypothesis,CF_hypothesis)
+all_p_values<-all_hypothesis_test[,c(1:3,8,13,18)]
+write.csv(all_p_values,file="January 2025 analysis/model output/hypothesis_tests_p.csv",na="", row.names = F)
 
-write.csv(all_p_values,file="January 2025 analysis/model output/hypothesis_tests.csv",na="", row.names = F)
+all_hypothesis_test<-all_hypothesis_test%>%
+  pivot_longer(cols=hypothesis1_p:hypothesis4_eff, names_to = "ratio", values_to = "value")%>%
+  separate(ratio, c("ratio","test"))%>%
+  pivot_wider(names_from="test", values_from = "value")
+
+write.csv(all_hypothesis_test,file="January 2025 analysis/model output/hypothesis_tests.csv",na="", row.names = F)
 
 #Make map of all available data####
 #pull in site map table for lat long of sites and filter by periphyton list since contains all available sites

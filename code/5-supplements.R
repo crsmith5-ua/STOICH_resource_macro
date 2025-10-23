@@ -188,9 +188,7 @@ NEON_count_rich_long<-NEON_count_rich%>%
 ###CN####
 CN_peri<-ggplot(NEON_count_rich)+
   geom_point(aes(mean_CN.per, rich), color="#661102")+
-  geom_smooth(aes(mean_CN.per, rich), method="lm",color="#661102", linetype="dotted",se=F)+
   geom_point(aes(mean_CN.per, HB), color="#999834")+
-  geom_smooth(aes(mean_CN.per, HB), method="lm",color="#999834",linetype="dotted",se=F)+
   scale_x_log10()+
   scale_y_continuous(limits=c(0,200), breaks=seq(0,200,50))+
   labs(x='Periphyton C:N (molar)', y="Richness")+
@@ -199,9 +197,7 @@ CN_peri<-ggplot(NEON_count_rich)+
 ###CP####
 CP_peri<-ggplot(NEON_count_rich)+
   geom_point(aes(mean_CP.per, rich), color="#661102")+
-  geom_smooth(aes(mean_CP.per, rich), method="lm",color="#661102",linetype="dotted",se=F)+
   geom_point(aes(mean_CP.per, HB), color="#999834")+
-  geom_smooth(aes(mean_CP.per, HB), method="lm",color="#999834",linetype="dotted",se=F)+
   scale_x_log10()+
   scale_y_continuous(limits=c(0,200), breaks=seq(0,200,50))+
   labs(x='Periphyton C:P (molar)', y="Richness")+
@@ -210,9 +206,7 @@ CP_peri<-ggplot(NEON_count_rich)+
 ###NP####
 NP_peri<-ggplot(NEON_count_rich)+
   geom_point(aes(mean_NP.per, rich), color="#661102")+
-  geom_smooth(aes(mean_NP.per, rich), method="lm",color="#661102",linetype="dotted",se=F)+
   geom_point(aes(mean_NP.per, HB), color="#999834")+
-  geom_smooth(aes(mean_NP.per, HB), method="lm",color="#999834",linetype="dotted",se=F)+
   scale_x_log10()+
   scale_y_continuous(limits=c(0,200), breaks=seq(0,200,50))+
   labs(x='Periphyton N:P (molar)', y="Richness")+
@@ -224,7 +218,6 @@ CN_ses<-ggplot(NEON_count_rich)+
   geom_point(aes(mean_CN.ses, rich), color="#661102")+
   geom_smooth(aes(mean_CN.ses, rich), method="lm",color="#661102",linetype="solid",se=T)+
   geom_point(aes(mean_CN.ses, CF), color="#44AA99")+
-  geom_smooth(aes(mean_CN.ses, CF), method="lm",color="#44AA99",linetype="dotted",se=F)+
   geom_point(aes(mean_CN.ses, CG), color="#DECC77")+
   geom_smooth(aes(mean_CN.ses, CG), method="lm",color="#DECC77",linetype="solid",se=T)+
   scale_x_log10()+
@@ -235,11 +228,8 @@ CN_ses<-ggplot(NEON_count_rich)+
 ###CP####
 CP_ses<-ggplot(NEON_count_rich)+
   geom_point(aes(mean_CP.ses, rich), color="#661102")+
-  geom_smooth(aes(mean_CP.ses, rich), method="lm",color="#661102",linetype="dotted",se=F)+
   geom_point(aes(mean_CP.ses, CF), color="#44AA99")+
-  geom_smooth(aes(mean_CP.ses, CF), method="lm",color="#44AA99",linetype="dotted",se=F)+
   geom_point(aes(mean_CP.ses, CG), color="#DECC77")+
-  geom_smooth(aes(mean_CP.ses, CG), method="lm",color="#DECC77",linetype="dotted",se=F)+
   scale_x_log10()+
   scale_y_continuous(limits=c(0,200), breaks=seq(0,200,50))+
   labs(x='Seston C:P (molar)', y="Richness")+
@@ -248,11 +238,8 @@ CP_ses<-ggplot(NEON_count_rich)+
 ###NP####
 NP_ses<-ggplot(NEON_count_rich)+
   geom_point(aes(mean_NP.ses, rich), color="#661102")+
-  geom_smooth(aes(mean_NP.ses, rich), method="lm",color="#661102",linetype="dotted",se=F)+
   geom_point(aes(mean_NP.ses, CF), color="#44AA99")+
-  geom_smooth(aes(mean_NP.ses, CF), method="lm",color="#44AA99",linetype="dotted",se=F)+
   geom_point(aes(mean_NP.ses, CG), color="#DECC77")+
-  geom_smooth(aes(mean_NP.ses, CG), method="lm",color="#DECC77",linetype="dotted",se=F)+
   scale_x_log10()+
   scale_y_continuous(limits=c(0,200), breaks=seq(0,200,50))+
   labs(x='Seston N:P (molar)', y="Richness")+
@@ -263,14 +250,16 @@ legend<-ggplot(NEON_count_rich_long, aes(mean_NP.per, richness, color=ffg))+
   geom_point()+
   scale_color_manual(values=c("#44AA99","#DECC77","#999834","#661102"),
                      name="", labels=c("Collector-Filterer","Colector-Gatherer","Herbivore","All"))+
-  theme_few()+
+  theme_few(base_size = 14)+
   theme(legend.position = 'bottom');legend
 legend<-get_legend(legend, position = "bottom")
 #graph all together
-CN_peri+CN_ses+CP_peri+CP_ses+NP_peri+NP_ses+legend+ plot_layout(ncol=2, axes='collect')+ 
-  plot_annotation(tag_levels = 'a', tag_suffix = ")")
-
-ggplot2::ggsave("January 2025 analysis/graphs/diversity_plots.pdf",dpi=800, width=9, height=10)
+plot<-CN_peri+CN_ses+CP_peri+CP_ses+NP_peri+NP_ses+plot_layout(ncol=2, axes='collect')+plot_annotation(tag_levels = 'a', tag_suffix = ")")
+plot+legend+theme(plot.tag = element_blank())+plot_layout(heights = c(2,2,2,1))+plot_layout(design=c("AB
+                                                                                                     CD
+                                                                                                     EF
+                                                                                                     GG"))
+ggplot2::ggsave("January 2025 analysis/graphs/diversity_plots.jpeg",dpi=800, width=9, height=10)
 
 
 #Extract slopes and p-values for diversity stoich relationships####
