@@ -1,0 +1,117 @@
+"siteID","SampleDate.SampleEvent","Name.Site","Latitude.Site","Longitude.Site","EcosystemType.Site","Type.OrganismStoichiometry","CarbonMean.OrganismStoichiometry","CarbonUnits.OrganismStoichiometry","NitrogenMean.OrganismStoichiometry","NitrogenUnits.OrganismStoichiometry","PhosphorusMean.OrganismStoichiometry","PhosphorusUnits.OrganismStoichiometry","CarbonToNitrogenRatio.OrganismStoichiometry","CarbonToPhosphorusRatio.OrganismStoichiometry","NitrogenToPhosphorusRatio.OrganismStoichiometry"
+"TOMB",2019-11-25,"lower tombigbee river neon",31.85382,-88.1573,"River","Seston",937.39,"ugC_L",243.78,"ugN_L",36.18,"ugP_L",4.48424932,66.81560789,14.90006535
+"TOMB",2019-11-25,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",1043.21,"ugC_L",254.36,"ugN_L",37.54,"ugP_L",4.78289044,71.66442877,14.98349789
+"TOMB",2019-11-25,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",919.47,"ugC_L",272.67,"ugN_L",37,"ugP_L",3.93249078,64.08582952,16.29649835
+"BLWA",2019-10-28,"black warrior river neon",32.54067,-87.79806,"River","Seston",1091.53,"ugC_L",288.61,"ugN_L",39.24,"ugP_L",4.41054045,71.73528832,16.26451206
+"BLWA",2019-10-28,"black warrior river neon",32.54076,-87.79831,"River","Seston",1046.22,"ugC_L",312.61,"ugN_L",36.22,"ugP_L",3.90290211,74.49047477,19.08591931
+"BLWA",2019-10-28,"black warrior river neon",32.54076,-87.79831,"River","Seston",977.02,"ugC_L",314.34,"ugN_L",43.12,"ugP_L",3.6246937,58.43201623,16.12053903
+"FLNT",2019-10-15,"flint river neon",31.184609,-84.438438,"River","Seston",294.78,"ugC_L",62.95,"ugN_L",11.92,"ugP_L",5.46096996,63.77462733,11.67826005
+"FLNT",2019-10-15,"flint river neon",31.185424,-84.437403,"River","Seston",295.07,"ugC_L",54.06,"ugN_L",9.59,"ugP_L",6.3652655,79.34738523,12.46568353
+"FLNT",2019-10-15,"flint river neon",31.185424,-84.437403,"River","Seston",324.73,"ugC_L",61.49,"ugN_L",7.48,"ugP_L",6.15864863,111.95589986,18.17864707
+"FLNT",2019-07-23,"flint river neon",31.184609,-84.438438,"River","Seston",394.55,"ugC_L",61.16,"ugN_L",13.96,"ugP_L",7.52319084,72.88577898,9.68814703
+"FLNT",2019-07-23,"flint river neon",31.185424,-84.437403,"River","Seston",392.83,"ugC_L",61,"ugN_L",12.93,"ugP_L",7.5100412,78.34878977,10.43253795
+"FLNT",2019-07-23,"flint river neon",31.185424,-84.437403,"River","Seston",364.21,"ugC_L",53.09,"ugN_L",12.6,"ugP_L",8.00030691,74.54310712,9.31753093
+"TOMB",2019-07-09,"lower tombigbee river neon",31.85382,-88.1573,"River","Seston",788.15,"ugC_L",150.83,"ugN_L",28.28,"ugP_L",6.09380645,71.87132395,11.79415928
+"TOMB",2019-07-09,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",855.1,"ugC_L",169.79,"ugN_L",30.48,"ugP_L",5.8731664,72.34826391,12.31844272
+"TOMB",2019-07-09,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",905.77,"ugC_L",175.63,"ugN_L",29.98,"ugP_L",6.01432286,77.91345697,12.95465154
+"BLWA",2019-06-25,"black warrior river neon",32.54067,-87.79806,"River","Seston",1303.41,"ugC_L",238.75,"ugN_L",25.07,"ugP_L",6.36656498,134.07656812,21.05948319
+"BLWA",2019-06-25,"black warrior river neon",32.54076,-87.79831,"River","Seston",1081.74,"ugC_L",202.1,"ugN_L",19.72,"ugP_L",6.24200458,141.46276708,22.66303481
+"BLWA",2019-06-25,"black warrior river neon",32.54076,-87.79831,"River","Seston",898.24,"ugC_L",169.39,"ugN_L",22.11,"ugP_L",6.18403773,104.76828112,16.94172735
+"TOMB",2019-04-09,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",1591.37,"ugC_L",226.62,"ugN_L",49.76,"ugP_L",8.18918041,82.47398231,10.07109114
+"TOMB",2019-04-09,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",1767.93,"ugC_L",247.52,"ugN_L",45.52,"ugP_L",8.32956414,100.15876996,12.02449112
+"TOMB",2019-04-09,"lower tombigbee river neon",31.85382,-88.1573,"River","Seston",1545.45,"ugC_L",227.83,"ugN_L",19.57,"ugP_L",7.91063882,203.65276156,25.74416127
+"FLNT",2019-03-13,"flint river neon",31.184609,-84.438438,"River","Seston",598.65,"ugC_L",66.12,"ugN_L",14.75,"ugP_L",10.5586319,104.66636385,9.91287175
+"FLNT",2019-03-13,"flint river neon",31.185424,-84.437403,"River","Seston",578.22,"ugC_L",61.32,"ugN_L",13.94,"ugP_L",10.99660108,106.96864781,9.72742823
+"FLNT",2019-03-13,"flint river neon",31.185424,-84.437403,"River","Seston",597.52,"ugC_L",64.95,"ugN_L",13.2,"ugP_L",10.72854429,116.7359671,10.88087665
+"BLWA",2019-02-18,"black warrior river neon",32.54076,-87.79831,"River","Seston",525.68,"ugC_L",80.15,"ugN_L",17.52,"ugP_L",7.64866139,77.37729132,10.1164488
+"BLWA",2019-02-18,"black warrior river neon",32.54076,-87.79831,"River","Seston",585.52,"ugC_L",89.4,"ugN_L",14.03,"ugP_L",7.63786051,107.62427365,14.09089279
+"BLWA",2019-02-18,"black warrior river neon",32.54076,-87.79831,"River","Seston",553.55,"ugC_L",82.63,"ugN_L",19.3,"ugP_L",7.81243847,73.96490715,9.46758268
+"BLWA",2018-11-20,"black warrior river neon",32.54076,-87.79831,"River","Seston",574.03,"ugC_L",73.02,"ugN_L",15.47,"ugP_L",9.16769738,95.69085758,10.437829
+"BLWA",2018-11-20,"black warrior river neon",32.54076,-87.79831,"River","Seston",1180.05,"ugC_L",337.69,"ugN_L",15.01,"ugP_L",4.0752074,202.74300879,49.75035347
+"BLWA",2018-11-20,"black warrior river neon",32.54067,-87.79806,"River","Seston",465.22,"ugC_L",68.6,"ugN_L",15.51,"ugP_L",7.9086393,77.35221413,9.78072348
+"FLNT",2018-10-25,"flint river neon",31.184609,-84.438438,"River","Seston",416.24,"ugC_L",54.43,"ugN_L",9.16,"ugP_L",8.91811331,117.18567058,13.14018633
+"FLNT",2018-10-25,"flint river neon",31.185424,-84.437403,"River","Seston",408.74,"ugC_L",58.21,"ugN_L",7.8,"ugP_L",8.18873937,135.13837994,16.50295287
+"FLNT",2018-10-25,"flint river neon",31.185424,-84.437403,"River","Seston",402.42,"ugC_L",55.27,"ugN_L",8.95,"ugP_L",8.49097573,115.95318751,13.65604981
+"TOMB",2018-07-10,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",1072.56,"ugC_L",210.37,"ugN_L",22.98,"ugP_L",5.94573155,120.36431327,20.24381899
+"TOMB",2018-07-10,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",980.95,"ugC_L",187.73,"ugN_L",24.56,"ugP_L",6.0936948,103.00176801,16.90300736
+"TOMB",2018-07-10,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",1040.99,"ugC_L",201.46,"ugN_L",23.93,"ugP_L",6.025946,112.18376966,18.61678974
+"GUIL",2018-07-05,"rio yahuecas neon",18.174097,-66.799717,"Stream","Seston",172.4,"ugC_L",30.17,"ugN_L",1.37,"ugP_L",6.66391515,324.52104416,48.69825572
+"BLWA",2018-06-28,"black warrior river neon",32.54076,-87.79831,"River","Seston",1279.48,"ugC_L",266.07,"ugN_L",27.87,"ugP_L",5.60796248,118.39209435,21.11142767
+"BLWA",2018-06-28,"black warrior river neon",32.54076,-87.79831,"River","Seston",1224.14,"ugC_L",256.02,"ugN_L",30.9,"ugP_L",5.57602489,102.16420976,18.32205054
+"BLWA",2018-06-28,"black warrior river neon",32.54076,-87.79831,"River","Seston",1318.58,"ugC_L",268.79,"ugN_L",30.59,"ugP_L",5.72085426,111.16118749,19.4308721
+"CUPE",2018-06-25,"rio cupeyes neon",18.110265,-66.986411,"Stream","Seston",68.01,"ugC_L",8.68,"ugN_L",0.24,"ugP_L",9.13735624,730.78176751,79.97737511
+"FLNT",2018-03-13,"flint river neon",31.185424,-84.437403,"River","Seston",359.27,"ugC_L",52.13,"ugN_L",,,8.03712525,,
+"FLNT",2018-03-13,"flint river neon",31.185424,-84.437403,"River","Seston",375.02,"ugC_L",53.21,"ugN_L",,,8.21918353,,
+"FLNT",2018-03-13,"flint river neon",31.184609,-84.438438,"River","Seston",340.76,"ugC_L",51.36,"ugN_L",,,7.73732968,,
+"TOMB",2018-03-07,"lower tombigbee river neon",31.85382,-88.1573,"River","Seston",2981.62,"ugC_L",361.7,"ugN_L",56.02,"ugP_L",9.61327335,137.25727066,14.27789116
+"TOMB",2018-03-07,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",2534.28,"ugC_L",298.73,"ugN_L",73.5,"ugP_L",9.89334752,88.9187661,8.98773301
+"TOMB",2018-03-07,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",2237.81,"ugC_L",285.06,"ugN_L",63.87,"ugP_L",9.15491754,90.35505704,9.86956536
+"BLWA",2018-02-21,"black warrior river neon",32.54076,-87.79831,"River","Seston",804.15,"ugC_L",117.97,"ugN_L",24.73,"ugP_L",7.94937518,83.85696117,10.54887451
+"BLWA",2018-02-21,"black warrior river neon",32.54076,-87.79831,"River","Seston",831.67,"ugC_L",117.31,"ugN_L",23.64,"ugP_L",8.26767714,90.72557598,10.97352672
+"GUIL",2018-02-01,"rio yahuecas neon",18.174097,-66.799717,"Stream","Seston",78.13,"ugC_L",17.07,"ugN_L",2.99,"ugP_L",5.33767111,67.38648546,12.62469793
+"CUPE",2018-01-24,"rio cupeyes neon",18.110265,-66.986411,"Stream","Seston",57.19,"ugC_L",12.03,"ugN_L",1.93,"ugP_L",5.54398411,76.41681944,13.7837371
+"CUPE",2017-11-30,"rio cupeyes neon",18.110265,-66.986411,"Stream","Seston",48.62,"ugC_L",9.75,"ugN_L",0.68,"ugP_L",5.81537662,184.38781253,31.70694256
+"TOMB",2017-11-29,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",560.66,"ugC_L",86.74,"ugN_L",13.05,"ugP_L",7.53785298,110.79374217,14.69831563
+"TOMB",2017-11-29,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",512.43,"ugC_L",78.96,"ugN_L",18.45,"ugP_L",7.56824034,71.62495255,9.46388451
+"TOMB",2017-11-29,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",554.37,"ugC_L",84.72,"ugN_L",11.65,"ugP_L",7.63099696,122.71565369,16.08120857
+"GUIL",2017-11-21,"rio yahuecas neon",18.174097,-66.799717,"Stream","Seston",159.83,"ugC_L",25.05,"ugN_L",5.51,"ugP_L",7.44077336,74.80538646,10.0534424
+"BLWA",2017-11-16,"black warrior river neon",32.54076,-87.79831,"River","Seston",767.49,"ugC_L",125.56,"ugN_L",12.67,"ugP_L",7.12834853,156.21483736,21.91459026
+"BLWA",2017-11-16,"black warrior river neon",32.54076,-87.79831,"River","Seston",854.35,"ugC_L",136.1,"ugN_L",14.48,"ugP_L",7.3205752,152.15752389,20.78491373
+"BLWA",2017-11-16,"black warrior river neon",32.54076,-87.79831,"River","Seston",704.56,"ugC_L",119.66,"ugN_L",17.13,"ugP_L",6.86651688,106.06858878,15.44721881
+"LECO",2017-10-30,"leconte creek neon",35.692201,-83.504427,"Stream","Seston",303.14,"ugC_L",21.67,"ugN_L",2.16,"ugP_L",16.31367637,361.92256858,22.18522425
+"MAYF",2017-10-30,"mayfield creek neon",32.961588,-87.408223,"Stream","Seston",964.92,"ugC_L",54.53,"ugN_L",3.29,"ugP_L",20.63589541,756.3478567,36.65204935
+"PRIN",2017-10-26,"pringle creek neon",33.37843,-97.781508,"Stream","Seston",220.21,"ugC_L",24.39,"ugN_L",2.99,"ugP_L",10.52913621,189.92932244,18.03845241
+"POSE",2017-10-24,"posey creek neon",38.895193,-78.147862,"Stream","Seston",1693,"ugC_L",130.91,"ugN_L",29.65,"ugP_L",15.08174671,147.25106033,9.76352827
+"BLUE",2017-10-18,"blue river neon",34.443439,-96.623887,"River","Seston",124.2,"ugC_L",23.46,"ugN_L",0.22,"ugP_L",6.17392139,1455.87834181,235.8109619
+"FLNT",2017-10-18,"flint river neon",31.184609,-84.438438,"River","Seston",327.64,"ugC_L",40.03,"ugN_L",4.16,"ugP_L",9.54506378,203.10927548,21.27898568
+"FLNT",2017-10-18,"flint river neon",31.185424,-84.437403,"River","Seston",359.76,"ugC_L",93.09,"ugN_L",1.38,"ugP_L",4.50689408,672.29511946,149.17038368
+"FLNT",2017-10-18,"flint river neon",31.185424,-84.437403,"River","Seston",665.38,"ugC_L",75.51,"ugN_L",3.14,"ugP_L",10.27620548,546.4699243,53.17818188
+"WALK",2017-10-17,"walker branch neon",35.957219,-84.279211,"Stream","Seston",454.44,"ugC_L",23.05,"ugN_L",2.62,"ugP_L",22.99180826,447.30260785,19.45486857
+"HOPB",2017-10-12,"lower hop brook neon",42.471741,-72.330664,"Stream","Seston",246.51,"ugC_L",24.05,"ugN_L",4.04,"ugP_L",11.95327658,157.35456508,13.16413655
+"ARIK",2017-10-12,"arikaree river neon",39.758359,-102.448595,"Stream","Seston",1348.18,"ugC_L",140.49,"ugN_L",24.22,"ugP_L",11.19102781,143.54891415,12.82714301
+"MCRA",2017-09-26,"mcrae creek neon",44.258957,-122.165861,"Stream","Seston",61.45,"ugC_L",4.22,"ugN_L",0.32,"ugP_L",16.98153497,495.21988987,29.16225717
+"WLOU",2017-09-18,"west st louis creek neon",39.890674,-105.911293,"Stream","Seston",60.88,"ugC_L",5.13,"ugN_L",0.37,"ugP_L",13.83963977,424.32545935,30.66015202
+"COMO",2017-09-07,"como creek neon",40.034937,-105.544424,"Stream","Seston",269.75,"ugC_L",25.67,"ugN_L",2.73,"ugP_L",12.25471152,254.81499235,20.79322651
+"CARI",2017-08-21,"caribou creek neon",65.15308,-147.501997,"Stream","Seston",333.72,"ugC_L",23.48,"ugN_L",0.26,"ugP_L",16.57492797,3310.05383533,199.70245668
+"OKSR",2017-08-07,"oksrukuyik creek neon",68.669651,-149.143505,"Stream","Seston",180.41,"ugC_L",13.67,"ugN_L",0.24,"ugP_L",15.39074347,1938.54343002,125.95515182
+"COMO",2017-08-01,"como creek neon",40.034937,-105.544424,"Stream","Seston",569.33,"ugC_L",43.06,"ugN_L",0.56,"ugP_L",15.41904766,2621.81601673,170.03748053
+"MCRA",2017-08-01,"mcrae creek neon",44.258957,-122.165861,"Stream","Seston",189.2,"ugC_L",9.56,"ugN_L",0.72,"ugP_L",23.07973124,677.66461017,29.36189347
+"LECO",2017-07-26,"leconte creek neon",35.692201,-83.504427,"Stream","Seston",2433.38,"ugC_L",141.93,"ugN_L",556,"ugP_L",19.99416349,11.28655268,0.56449237
+"TOMB",2017-07-26,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",1186.6,"ugC_L",181.9,"ugN_L",7.4,"ugP_L",7.6074508,413.52216661,54.35752099
+"TOMB",2017-07-26,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",1262.45,"ugC_L",169.23,"ugN_L",30.66,"ugP_L",8.69970126,106.18623109,12.20573303
+"TOMB",2017-07-26,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",1062.35,"ugC_L",137.47,"ugN_L",2.18,"ugP_L",9.0121248,1256.71644733,139.44729747
+"BLUE",2017-07-24,"blue river neon",34.443439,-96.623887,"River","Seston",166.63,"ugC_L",24.58,"ugN_L",1.15,"ugP_L",7.90567257,373.66422867,47.26533072
+"WLOU",2017-07-20,"west st louis creek neon",39.890674,-105.911293,"Stream","Seston",131.51,"ugC_L",8.89,"ugN_L",1.53,"ugP_L",17.25140712,221.66315852,12.84899006
+"HOPB",2017-07-19,"lower hop brook neon",42.471741,-72.330664,"Stream","Seston",342.65,"ugC_L",31.38,"ugN_L",4.7,"ugP_L",12.73401345,188.0091771,14.76433002
+"FLNT",2017-07-19,"flint river neon",31.185424,-84.437403,"River","Seston",452.3,"ugC_L",68,"ugN_L",0.83,"ugP_L",7.75684624,1405.31818366,181.17133444
+"FLNT",2017-07-19,"flint river neon",31.185424,-84.437403,"River","Seston",406.59,"ugC_L",63.95,"ugN_L",0.63,"ugP_L",7.41453043,1664.34100784,224.47018383
+"FLNT",2017-07-19,"flint river neon",31.184609,-84.438438,"River","Seston",569.12,"ugC_L",62.73,"ugN_L",0.59,"ugP_L",10.58025336,2487.58544196,235.11586695
+"MCDI",2017-07-19,"mcdiffett creek neon",38.946553,-96.442948,"Stream","Seston",244.16,"ugC_L",26.31,"ugN_L",39.3,"ugP_L",10.82234005,16.02168306,1.48042688
+"MAYF",2017-07-18,"mayfield creek neon",32.961588,-87.408223,"Stream","Seston",2968.01,"ugC_L",201.41,"ugN_L",6.77,"ugP_L",17.18509107,1130.58406891,65.78865742
+"REDB",2017-07-18,"red butte creek neon",40.783659,-111.798106,"Stream","Seston",966.39,"ugC_L",45.78,"ugN_L",9.42,"ugP_L",24.61751133,264.56214,10.74690843
+"ARIK",2017-07-18,"arikaree river neon",39.758359,-102.448595,"Stream","Seston",1092.29,"ugC_L",126.43,"ugN_L",27.6,"ugP_L",10.07523831,102.05987826,10.12977313
+"POSE",2017-07-18,"posey creek neon",38.895193,-78.147862,"Stream","Seston",6282.24,"ugC_L",293.08,"ugN_L",50.52,"ugP_L",24.99745805,320.68404438,12.82866617
+"KING",2017-07-13,"kings creek neon",39.105069,-96.603387,"Stream","Seston",148.88,"ugC_L",16.3,"ugN_L",2.66,"ugP_L",10.65163469,144.33806998,13.55079049
+"WALK",2017-07-11,"walker branch neon",35.957219,-84.279211,"Stream","Seston",379.39,"ugC_L",29.93,"ugN_L",1.07,"ugP_L",14.78245856,914.38327165,61.85596719
+"SYCA",2017-07-11,"sycamore creek neon",33.750886,-111.508124,"Stream","Seston",129.37,"ugC_L",10.5,"ugN_L",14.26,"ugP_L",14.36851172,23.39592513,1.62827756
+"CARI",2017-07-11,"caribou creek neon",65.15308,-147.501997,"Stream","Seston",536.94,"ugC_L",38.82,"ugN_L",8.73,"ugP_L",16.13012507,158.61260033,9.83331497
+"LEWI",2017-07-11,"lewis run neon",39.094218,-77.981434,"Stream","Seston",3733.14,"ugC_L",306.45,"ugN_L",31.98,"ugP_L",14.20633851,301.03846306,21.19043291
+"PRIN",2017-07-05,"pringle creek neon",33.37843,-97.781508,"Stream","Seston",446.73,"ugC_L",53,"ugN_L",2.75,"ugP_L",9.82962062,418.92723455,42.61886097
+"CUPE",2017-06-29,"rio cupeyes neon",18.110265,-66.986411,"Stream","Seston",72.79,"ugC_L",4.37,"ugN_L",0.27,"ugP_L",19.42485519,695.23899893,35.79120627
+"OKSR",2017-06-07,"oksrukuyik creek neon",68.669651,-149.143505,"Stream","Seston",196.86,"ugC_L",17.09,"ugN_L",0.08,"ugP_L",13.43330655,6345.90642927,472.4009242
+"WLOU",2017-05-30,"west st louis creek neon",39.890674,-105.911293,"Stream","Seston",264.74,"ugC_L",15.65,"ugN_L",0.01,"ugP_L",19.7275308,68272.48879749,3460.77213048
+"CARI",2017-05-15,"caribou creek neon",65.15308,-147.501997,"Stream","Seston",662.34,"ugC_L",42.68,"ugN_L",113.53,"ugP_L",18.09772899,15.0451498,0.83132805
+"KING",2017-04-21,"kings creek neon",39.105069,-96.603387,"Stream","Seston",145.14,"ugC_L",15.02,"ugN_L",1.34,"ugP_L",11.26898222,279.32415313,24.78699032
+"HOPB",2017-04-19,"lower hop brook neon",42.471741,-72.330664,"Stream","Seston",334.2,"ugC_L",21.91,"ugN_L",0.37,"ugP_L",17.78818246,2329.32931199,130.94813467
+"MCDI",2017-04-17,"mcdiffett creek neon",38.946553,-96.442948,"Stream","Seston",352.86,"ugC_L",46.845,"ugN_L",17.73,"ugP_L",8.78429059,51.32392534,5.84269439
+"LEWI",2017-03-29,"lewis run neon",39.094218,-77.981434,"Stream","Seston",299.24,"ugC_L",34.4,"ugN_L",6.72,"ugP_L",10.14445479,114.83559986,11.32003664
+"ARIK",2017-03-27,"arikaree river neon",39.758359,-102.448595,"Stream","Seston",534.86,"ugC_L",61.74,"ugN_L",10.65,"ugP_L",10.10278248,129.51398984,12.81963559
+"LECO",2017-03-23,"leconte creek neon",35.692201,-83.504427,"Stream","Seston",365.41,"ugC_L",25.24,"ugN_L",0.09,"ugP_L",16.8833485,10470.41967024,620.16250318
+"POSE",2017-03-21,"posey creek neon",38.895193,-78.147862,"Stream","Seston",757.42,"ugC_L",61.37,"ugN_L",10.86,"ugP_L",14.39289486,179.85938901,12.49640123
+"MAYF",2017-03-14,"mayfield creek neon",32.961588,-87.408223,"Stream","Seston",644.32,"ugC_L",75.81,"ugN_L",0.34,"ugP_L",9.91157389,4887.07344187,493.06734676
+"BLUE",2017-03-14,"blue river neon",34.443439,-96.623887,"River","Seston",452.74,"ugC_L",64.37,"ugN_L",1.68,"ugP_L",8.20224741,694.96951587,84.72915793
+"WALK",2017-03-08,"walker branch neon",35.957219,-84.279211,"Stream","Seston",233.54,"ugC_L",14.69,"ugN_L",0.01,"ugP_L",18.53988293,60226.47515965,3248.48195506
+"BLWA",2017-02-27,"black warrior river neon",32.54067,-87.79806,"River","Seston",1360.29,"ugC_L",192.61,"ugN_L",31.74,"ugP_L",8.23607289,110.52251357,13.41932193
+"TOMB",2017-02-23,"lower tombigbee river neon",31.85382,-88.1573,"River","Seston",817.06,"ugC_L",114.6,"ugN_L",29.7,"ugP_L",8.31451344,70.94530673,8.53270697
+"TOMB",2017-02-23,"lower tombigbee river neon",31.853431,-88.158872,"River","Seston",832.66,"ugC_L",143.74,"ugN_L",29.52,"ugP_L",6.7555011,72.74070725,10.7676257
+"PRIN",2017-02-21,"pringle creek neon",33.37843,-97.781508,"Stream","Seston",828.4,"ugC_L",171.37,"ugN_L",6.34,"ugP_L",5.63732147,336.95895503,59.77288276
